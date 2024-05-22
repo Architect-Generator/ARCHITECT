@@ -38,7 +38,7 @@
 
         <div class="container" id="abstractdiv">
           <div class="guideme">Abstract</div>
-          <div style="width:50%; text-align: left; float: left">
+          <div style="width:40%; text-align: left; float: left; margin-left: 2%;">
             <div class="abstract">
               <br>Creating large-scale interactive 3D environments is crucial for Robotics and Embodied AI research, but generating diverse and realistic environments remains challenging. Current methods, such as manual design and procedural generation, are limited by human effort, predefined rules, and inadequate 3D spatial reasoning. Pre-trained 2D image generative models excel in scene and object configuration. To address these issues, we introduce ARCHITECT, a generative framework that creates complex 3D environments using diffusion-based 2D image inpainting. We employ visual perception models to extract objects from images and depth estimation models to convert 2D images into 3D space. 
             </div>
@@ -49,7 +49,7 @@
           <img
             class="image"
             style="
-              width: 48%;
+              width: 56%;
               margin-top: 0%;
               margin-bottom: 2%;
               height: auto;
@@ -64,7 +64,7 @@
 
         <div class="container">
           <div class="guideme">Our Pipeline</div>
-          <div style="width:50%; margin-left:5%; margin-top:0%; float: left">
+          <div style="width:42%; margin-left:5%; margin-top:0%; float: left">
             <div class="video-abstract">
               · We present <b>ARCHITECT</b>, a generative framework to create <br>diverse, realistic, and complex Embodied AI scenes.
             </div>
@@ -74,11 +74,18 @@
             <div class="video-abstract">
               · Here, we showcase two cases in detail: <br>an <b>apartment</b> and a <b>grocery store</b>.
             </div>
+            <div class="video-abstract">
+              · The <b>Large Furniture</b> scene can be inpainted and rendered iteratively by changing view, making the scene more diverse.
+            </div>
+            <div class="video-abstract">
+              · The <b>Small Object</b> can add more details and interactive objects to the scene.
+            </div>
+
           </div>
           <img
             class="image"
             style="
-              width: 40%;
+              width: 48%;
               margin-top: 0%;
               margin-bottom: 2%;
               height: auto;
@@ -128,7 +135,53 @@
             src="./images/fig3.jpg"
           ></img>
         </div>
-          <div style="height: 5%;background-color: white;"></div>
+        <div style="height: 5%;background-color: white;"></div>
+
+        <div class="container" >
+          <div class="guideme">Small Object Placement</div>
+          <div style="width:33%; margin-left:5% ;margin-top: 2%;text-align: left; float: left">
+            <div class="method-abstract">
+              <b>ARCHITECT</b> can place interactable small objects inside large furniture. Generating diverse and interactable scene for Embodied AI tasks.
+            </div>
+          </div>
+          <img
+            class="image"
+            style="
+              width: 15%;
+              margin-top: 0%;
+              margin-bottom: 2%;
+              height: auto;
+              margin-right: 1%;
+              text-align: left;
+            "
+            src="./images/refrigerator.png"
+          ></img>
+          <img
+            class="image"
+            style="
+              width: 15%;
+              margin-top: 0%;
+              margin-bottom: 2%;
+              height: auto;
+              margin-right: 1%;
+              text-align: left;
+            "
+            src="./images/drawer.png"
+          ></img>
+          <img
+            class="image"
+            style="
+              width: 15%;
+              margin-top: 0%;
+              margin-bottom: 2%;
+              height: auto;
+              margin-right: 1%;
+              text-align: left;
+            "
+            src="./images/bookshelf.png"
+          ></img>
+        </div>
+        <div style="height: 5%;background-color: white;"></div>
 
 
        <div class="container">
