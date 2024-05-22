@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link
+      href="http://fonts.googleapis.com/css?family=Lato:300,400,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <!--fonts google-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="./main.js"></script>
+    <title>demo</title>
+  </head>
+  <body>
+      <div class="header">
+        <h1 class="head">ARCHITECT: Generating Vivid and Interactive 3D Scenes with 2D Hierarchical Inpainting</h1>
+        <div class="authors">Anonymous Author(s)</div>
+        <div class="intro">
+          We propose ARCHITECT, a generative framework for creating realistic and interactable 3D scenes via diffusion-based 2D inpainting, 
+          <br>leveraging controllable and hierarchical generation in 2D image space.
+        </div>
+         <div class="line"></div>
+      </div>
+      <div class="bigcontainer">
+
+
+        <div class="container" id="abstractdiv">
+          <div class="guideme">Abstract</div>
+          <div style="width:50%; text-align: left; float: left">
+            <div class="abstract">
+              Creating large-scale interactive 3D environments is essential for the development of Robotics and Embodied AI research. However, generating diverse embodied environments with realistic detail and considerable complexity remains a significant challenge. Current methods, including manual design, procedural generation, diffusion-based scene generation, and large language model (LLM) guided scene design, are hindered by limitations such as excessive human effort, reliance on predefined rules or training datasets, and limited 3D spatial reasoning ability. 
+              Since pre-trained 2D image generative models better capture scene and object configuration than LLMs, we address these challenges by introducing ARCHITECT, a generative framework that creates complex and realistic 3D embodied environments leveraging diffusion-based 2D image inpainting.
+              In detail, we utilize foundation visual perception models to obtain each generated object from the image and leverage pre-trained depth estimation models to lift the generated 2D image to 3D space.
+            </div>
+            <div class="abstract">
+              While there are still challenges that the camera parameters and scale of depth are still absent in the generated image, we address those problems by ``controlling'' the diffusion model by hierachical inpainting. Specifically, having access to ground-truth depth and camera parameters in simulation, we first render a photo-realistic image of only back-grounds in it. Then, we inpaint the foreground in this image, passing the geometric cues to the inpainting model in the back-ground, which informs the camera parameters.
+              This process effectively controls the camera parameters and depth scale for the generated image, facilitating the back-projection from 2D image to 3D point clouds.
+              Our pipeline is further extended to a hierarchical and iterative inpainting process to continuously generate placement of large furniture and small objects to enrich the scene. This iterative structure brings the flexibility for our method to generate or refine scenes from various starting points, such as text, floor plans, or pre-arranged environments. Experimental results demonstrate that ARCHITECT outperforms existing methods in producing realistic and complex environments, making it highly suitable for Embodied AI and robotics applications. 
+            </div>
+          </div>
+          <img
+            class="image"
+            style="
+              width: 48%;
+              margin-top: 0%;
+              margin-bottom: 2%;
+              height: auto;
+              margin-right: 2%;
+              text-align: left;
+            "
+            src="./images/teaser.png"
+          ></img>
+        </div>
+          <div style="height: 5%;background-color: white;"></div>
+
+
+        <div class="container">
+          <div class="guideme">Our Pipeline</div>
+          <div style="width:50%; margin-left:5%; margin-top:0%; float: left">
+            <div class="video-abstract">
+              · We present <b>ARCHITECT</b>, a generative framework to create <br>diverse, realistic, and complex Embodied AI scenes.
+            </div>
+            <div class="video-abstract">
+              · Leveraging 2D diffusion models, <br><b>ARCHITECT</b> generates scenarios in an open-vocabulary manner.
+            </div>
+            <div class="video-abstract">
+              · Here, we showcase two cases in detail: <br>an <b>apartment</b> and a <b>grocery store</b>.
+            </div>
+          </div>
+          <img
+            class="image"
+            style="
+              width: 40%;
+              margin-top: 0%;
+              margin-bottom: 2%;
+              height: auto;
+              margin-right: 2%;
+              text-align: left;
+            "
+            src="./images/pipeline.jpg"
+          ></img>
+          </div>
+          <div style="height: 5%;background-color: white;"></div>
+
+
+        <div class="container" >
+          <div class="guideme">Comparisons</div>
+          <div style="width:33%; margin-left:5% ;margin-top: 2%;text-align: left; float: left">
+            <div class="method-abstract">
+              We compare ARCHITECT with other methods:
+            </div>
+            <div class="method-abstract">
+              &nbsp;&nbsp;&nbsp;&nbsp;- Household Scenes:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <b>Living Room</b><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <b>Dining Room</b>
+            </div>
+            <div class="method-abstract">
+              &nbsp;&nbsp;&nbsp;&nbsp;- Non-household Scenes:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <b>Hospital Room</b><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <b>Hair Salon</b><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <b>Video Store</b><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <b>Casino</b><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <b>Children Room</b><br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <b>Shoe Store</b>
+            </div>
+            <div class="method-abstract">
+              More details are shown in our paper.
+            </div>
+          </div>
+          <img
+            class="image"
+            style="
+              width: 35%;
+              margin-top: 0%;
+              margin-bottom: 2%;
+              height: auto;
+              margin-right: 2%;
+              text-align: left;
+            "
+            src="./images/fig3.jpg"
+          ></img>
+        </div>
+          <div style="height: 5%;background-color: white;"></div>
+
+
+       <div class="container">
+          <div class="guideme">Experiment & Metrix</div>
+          <img class="image" src="./images/metric.png" style="
+              width: 70%;
+              margin-top: 0%;
+              margin-bottom: 2%;
+              height: auto;
+              margin-right: 2%;
+              text-align: left;
+            "></img>
+        </div>
+<div style="height: 5%;background-color: white;"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
